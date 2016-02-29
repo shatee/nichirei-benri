@@ -17,14 +17,14 @@ div.content {
   overflow-x: scroll;
 }
 
-ul.NichireiContainer-tasks-heading {
+ul.TasksHeading {
   width: 5000px;
 }
-ul.NichireiContainer-tasks-heading:after {
+ul.TasksHeading:after {
   clear: both;
 }
 
-li.NichireiContainer-tasks-heading-date {
+li.TasksHeading-date {
   width: 400px;
   height: 32px;
   line-height: 30px;

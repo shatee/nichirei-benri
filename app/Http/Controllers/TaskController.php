@@ -8,11 +8,12 @@ use Illuminate\Http\Request;
 class TaskController extends Controller {
 
   public function store(Request $request) {
-    $task = Task
-      ::where('line_id', $request->line_id)
-      ->where('date', $request->date)
-      ->where('type', $request->type)
-      ->firstOrCreate();
+    $date = new \DateTime($request->date);
+    $task = Task::firstOrNew([
+      'line_id' => $request->line_id,
+      'date' => $date->format('Y-m-d'),
+      'type' => $request->type,
+    ]);
 
     $task->content = $request->get('content');
 

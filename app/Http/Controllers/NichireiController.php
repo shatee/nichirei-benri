@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Line;
+use App\Task;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class NichireiController extends Controller {
+
+  const START_DAY = -4;
+  const END_DAY = 4;
 
   public function index() {
     /** @var Collection $lines */
@@ -22,7 +24,7 @@ class NichireiController extends Controller {
 
     $dateStart = new \DateTime('-4 day');
     $dateEnd = new \DateTime('+4 day');
-    $tasks = Line::whereIn('line_id', $lineIds)
+    $tasks = Task::whereIn('line_id', $lineIds)
       ->whereBetween('date', [$dateStart->format('Y-m-d'), $dateEnd->format('Y-m-d')])
       ->get();
 
