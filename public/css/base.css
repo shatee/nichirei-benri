@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+  box-sizing: border-box;
+}
+
+html,body {
+  width: 100%;
+  background-color: #eee;
+}
+
+a {
+  color: #678;
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 22px;
+  line-height: 26px;
+  padding: 0 4px;
+  color: #000;
+  background-color: #fff;
+  font-weight: lighter;
+}
+h2 {
+  font-size: 20px;
+  line-height: 22px;
+  margin: 2px 8px;
+  color: #666;
+}
+h3 {
+  font-size: 18px;
+  padding-left: 2px;
+  margin-bottom: 2px;
+  border-left: 8px solid #ddd;
+  border-bottom: 2px solid #ddd;
+}
+
+li {
+  list-style: none;
+}
+
+input, textarea {
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  padding: 2px;
+}
+
+.menu {
+  width: 100%;
+  padding: 2px 8px;
+  background-color: #222;
+}
+.menu li {
+  display: inline;
+  line-height: 20px;
+  margin-right: 12px;
+}
+.menu li a{
+  color: #aaa;
+}
+.menu li.active a{
+  color: #fff;
+  cursor: default;
+  font-weight: bold;
+  text-decoration: none;
+}
+.menu li:before {
+  content: '>';
+  color: #999;
+  font-size: 10px;
+  width: 6px;
+  display: inline-block;
+  position: relative;
+  top: -1px;
+}
+
+.content {
+  width: 100%;
+  padding: 4px 8px 12px;
+}
+
+dl {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  padding: 8px;
+  margin-bottom: 8px;
+  width: 400px;
+}
+dt {
+  font-weight: bold;
+  margin-bottom: -2px;
+  color: #666;
+}
+dd {
+  margin-left: 16px;
+}

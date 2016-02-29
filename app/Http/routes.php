@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/nichirei', 'NichireiController@index');
+
+Route::get('/line', 'LineController@index');
+Route::post('/line/add', 'LineController@add');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

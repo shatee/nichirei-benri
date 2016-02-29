@@ -1,0 +1,114 @@
+div.content {
+  margin: 0;
+  padding: 0;
+}
+
+.NichireiContainer:after {
+  clear: both;
+}
+
+.NichireiContainer-body {
+  width: 100%;
+}
+
+.NichireiContainer-tasks {
+  margin-left: 160px;
+  width: calc(100% - 160px);
+  overflow-x: scroll;
+}
+
+ul.NichireiContainer-tasks-heading {
+  width: 5000px;
+}
+ul.NichireiContainer-tasks-heading:after {
+  clear: both;
+}
+
+li.NichireiContainer-tasks-heading-date {
+  width: 400px;
+  height: 32px;
+  line-height: 30px;
+  padding-left: 8px;
+  float: left;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #fff;
+  border-top: #ddd solid 1px;
+  border-right: #ddd solid 1px;
+}
+
+span.icon-yesterday,
+span.icon-today {
+  float: right;
+  background-color: #444;
+  color: #fff;
+  margin-top: 4px;
+  margin-right: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+  border-radius: 12px;
+}
+
+/* Line list */
+
+ul.LineList {
+  padding-top: 32px;
+  width: 160px;
+  float: left;
+  border-right: #ccc solid 1px;
+}
+
+li.LineItem {
+  height: 400px;
+  background-color: #fff;
+  border-top: #ddd solid 1px;
+  padding: 8px;
+}
+
+p.LineItem-name {
+  font-size: 18px;
+}
+
+/* Task list */
+.TaskList {
+  clear: both;
+  width: 5000px;
+}
+
+/*.TaskRow {*/
+  /*width: 5000px;*/
+/*}*/
+
+.TaskRow {
+  clear: both;
+}
+
+.TaskItem {
+  width: 400px;
+  height: 400px;
+  padding-left: 5px;
+  float: left;
+  background-color: #fff;
+  border-top: #ddd solid 1px;
+  border-right: #ddd solid 1px;
+}
+
+label.TaskItem-label {
+  color: #666;
+  font-size: 12px;
+  font-weight: bold;
+  display: block;
+}
+
+textarea.TaskItem-content-do,
+textarea.TaskItem-content-did {
+  width: 388px;
+  height: 172px;
+}
+textarea.TaskItem-content-information {
+  width: 388px;
+  height: 368px;
+}

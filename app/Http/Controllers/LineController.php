@@ -1,0 +1,42 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Line;
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+class LineController extends Controller {
+
+  const STATUS_ADDED = 'added';
+
+  private static $validateRules = [
+    'name' => 'required|unique:lines',
+    'jira_name' => 'unique:lines',
+  ];
+
+  public function index() {
+    $lines = Line::all();
+    return view('line.index', [
+      'lines' => $lines
+    ]);
+  }
+
+  public function add(Request $request) {
+    $this->validate($request, self::$validateRules);
+
+    $maxListOrder = Line::all()->max('list_order');
+
+    $line = new Line();
+    $line->name = $request->name;
+    $line->jira_name = $request->jira_name;
+    $line->type = $request->type;
+    $line->list_order = $maxListOrder + 1;
+    if (!$line->save()) {
+      throw new \RuntimeException('?');
+    }
+    return redirect('line')->with('status', self::STATUS_ADDED);
+  }
+}
