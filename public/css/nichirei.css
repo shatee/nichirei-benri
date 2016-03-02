@@ -73,6 +73,13 @@ p.LineItem-name {
   margin-left: 8px;
 }
 
+img.LineItem-icon {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 16px auto 0;
+}
+
 /* Task list */
 .TaskList {
   clear: both;
