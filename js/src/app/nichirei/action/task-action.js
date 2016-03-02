@@ -9,6 +9,7 @@ export default class TaskAction {
 
   static save(task) {
     task.save().catch((res) => {
+      console.log(res);
       console.warn(res);
     });
   }

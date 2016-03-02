@@ -1,7 +1,7 @@
 import React from 'react';
 import TaskAction from '../action/task-action';
 import Task from '../model/task';
-import _ from 'lodash';
+import _ from 'underscore';
 
 export default class TaskItem extends React.Component {
   

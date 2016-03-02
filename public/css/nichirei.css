@@ -12,8 +12,8 @@ div.content {
 }
 
 .NichireiContainer-tasks {
-  margin-left: 160px;
-  width: calc(100% - 160px);
+  margin-left: 120px;
+  width: calc(100% - 120px);
   overflow-x: scroll;
 }
 
@@ -25,7 +25,7 @@ ul.TasksHeading:after {
 }
 
 li.TasksHeading-date {
-  width: 400px;
+  width: 440px;
   height: 32px;
   line-height: 30px;
   padding-left: 8px;
@@ -56,7 +56,7 @@ span.icon-today {
 
 ul.LineList {
   padding-top: 32px;
-  width: 160px;
+  width: 120px;
   float: left;
   border-right: #ccc solid 1px;
 }
@@ -69,7 +69,8 @@ li.LineItem {
 }
 
 p.LineItem-name {
-  font-size: 18px;
+  font-size: 24px;
+  margin-left: 8px;
 }
 
 /* Task list */
@@ -87,7 +88,7 @@ p.LineItem-name {
 }
 
 .TaskItem {
-  width: 400px;
+  width: 440px;
   height: 400px;
   padding-left: 5px;
   float: left;
@@ -98,17 +99,23 @@ p.LineItem-name {
 
 label.TaskItem-label {
   color: #666;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   display: block;
 }
 
 textarea.TaskItem-content-do,
+textarea.TaskItem-content-did,
+textarea.TaskItem-content-information {
+  font-size: 16px;
+}
+
+textarea.TaskItem-content-do,
 textarea.TaskItem-content-did {
-  width: 388px;
+  width: 428px;
   height: 172px;
 }
 textarea.TaskItem-content-information {
-  width: 388px;
+  width: 428px;
   height: 368px;
 }

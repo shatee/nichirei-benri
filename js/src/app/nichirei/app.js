@@ -57,6 +57,6 @@ for (let date = dateStart; date.getTime() <= dateEnd.getTime(); date.setTime(dat
   dates.push(date.toLocaleDateString());
 }
 
-ReactDOM.render(<AppContainer dates={dates} today={dateToday} yesterday={dateYesterday} />, document.querySelector('.content'));
+ReactDOM.render(<AppContainer dates={dates} today={dateToday.toLocaleDateString()} yesterday={dateYesterday.toLocaleDateString()} />, document.querySelector('.content'));
 
 location.hash = 'today';

@@ -16,6 +16,7 @@ class NichireiController extends Controller {
   public function index() {
     /** @var Collection $lines */
     $lines = Line::where('visible', true)
+      ->orderBy('list_order', 'asc')
       ->get();
 
     $lineIds = array_map(function ($line) {
