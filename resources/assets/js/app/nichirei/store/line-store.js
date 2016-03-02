@@ -1,4 +1,4 @@
-import {ReduceStore} from 'flux/utils';
+import {ReduceStore} from '../../../../../../node_modules/flux/utils';
 import Dispatcher from '../dispatcher';
 
 class LineStore extends ReduceStore {

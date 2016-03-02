@@ -1,4 +1,4 @@
-import {ReduceStore} from 'flux/utils';
+import {ReduceStore} from '../../../../../../node_modules/flux/utils';
 import TaskAction from '../action/task-action';
 import Dispatcher from '../dispatcher';
 

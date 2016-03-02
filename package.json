@@ -28,7 +28,7 @@
     "test": "tests"
   },
   "scripts": {
-    "build:nichirei": "browserify js/src/app/nichirei/app.js --debug -t babelify -o public/js/nichirei.js",
+    "build:nichirei": "browserify resources/assets/js/app/nichirei/app.js --debug -t babelify -o public/js/nichirei.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
