@@ -98,3 +98,16 @@ dt {
 dd {
   margin-left: 16px;
 }
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 4px;
+}
+th {
+  color: #666;
+}

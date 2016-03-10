@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>日例便利 - @yield('pageName')</title>
-  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="/css/base.css">
   @yield('headBottom')
 </head>
 <body>

@@ -19,6 +19,8 @@ Route::get('/nichirei', 'NichireiController@index');
 
 Route::get('/line', 'LineController@index');
 Route::post('/line/add', 'LineController@add');
+Route::get('/line/{id}/tasks', 'LineController@tasks');
+
 Route::post('/task/set', 'TaskController@store');
 
 /*
