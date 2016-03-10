@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Container} from 'flux/utils';
+import {Container} from '../../../../../node_modules/flux/utils';
 import LineList from './component/line-list';
 import TasksHeading from './component/tasks-heading'
 import TaskList from './component/task-list';

@@ -44,10 +44,10 @@ export default class TaskItem extends React.Component {
     const onDidContentChange = _.bind(this._onDidContentChange, this);
 
     return <div className="TaskItem">
-      <label className="TaskItem-label" htmlFor={taskDoId}>やること</label>
-      <textarea id={taskDoId} className="TaskItem-content-do" defaultValue={taskDoContent} onChange={onDoContentChange} />
       <label className="TaskItem-label" htmlFor={taskDidId}>やったこと</label>
       <textarea id={taskDidId} className="TaskItem-content-did" defaultValue={taskDidContent} onChange={onDidContentChange} />
+      <label className="TaskItem-label" htmlFor={taskDoId}>やること</label>
+      <textarea id={taskDoId} className="TaskItem-content-do" defaultValue={taskDoContent} onChange={onDoContentChange} />
     </div>;
   }
   

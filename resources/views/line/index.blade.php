@@ -25,6 +25,8 @@
               <dd>{{$line->type}}</dd>
               <dt>Visible</dt>
               <dd>@if($line->visible) 有効 @else 無効 @endif</dd>
+              <dt>アイコン URL</dt>
+              <dd><input type="text" name="icon_url" value="{{$line->icon_url}}"></dd>
               <input type="submit" value="変更">
             </dl>
           </form>
@@ -48,9 +50,12 @@
           </li>
           <li>
             <input id="type_information" type="radio" name="type" value="information">
-            <label for="type_information">情報共有対象</label></li>
+            <label for="type_information">情報共有対象</label>
+          </li>
         </ul>
       </dd>
+      <dt>アイコン URL</dt>
+      <dd><input type="text" name="icon_url" value=""></dd>
     </dl>
     <input type="submit" value="追加">
   </form>

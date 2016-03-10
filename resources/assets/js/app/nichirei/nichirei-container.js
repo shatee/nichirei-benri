@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import {Container} from 'flux/utils';
+import {Container} from '../../../../../node_modules/flux/utils';
 
 class NichireiContainer {
 

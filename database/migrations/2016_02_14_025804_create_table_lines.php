@@ -16,6 +16,7 @@ class CreateTableLines extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('jira_name');
+            $table->string('icon_url');
             $table->enum('type', ['progress', 'information']);
             $table->timestamps();
             $table->integer('list_order');

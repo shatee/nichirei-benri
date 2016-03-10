@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Line;
+use App\Task;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -34,9 +35,21 @@ class LineController extends Controller {
     $line->jira_name = $request->jira_name;
     $line->type = $request->type;
     $line->list_order = $maxListOrder + 1;
+    $line->icon_url = $request->icon_url;
     if (!$line->save()) {
       throw new \RuntimeException('?');
     }
     return redirect('line')->with('status', self::STATUS_ADDED);
   }
+
+  public function tasks($id) {
+    $line = Line::find($id);
+    $tasksGroupedDate = Task::getGroupedDateByLineId($id);
+
+    return view('line.tasks', [
+      'line' => $line,
+      'tasksGroupedDate' => $tasksGroupedDate,
+    ]);
+  }
+
 }
