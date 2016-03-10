@@ -20,12 +20,12 @@
                     <td>{{$date}}</td>
                     <td>
                         @if(isset($tasks['did']))
-                            <p>{{$tasks['did']}}</p>
+                            <pre>{{$tasks['did']}}</pre>
                         @endif
                     </td>
                     <td>
                         @if(isset($tasks['do']))
-                            <p>{{$tasks['do']}}</p>
+                            <pre>{{$tasks['do']}}</pre>
                         @endif
                     </td>
                 </tr>
