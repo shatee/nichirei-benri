@@ -111,3 +111,8 @@ th, td {
 th {
   color: #666;
 }
+
+pre {
+  border: 1px solid #ddd;
+  padding: 4px;
+}
