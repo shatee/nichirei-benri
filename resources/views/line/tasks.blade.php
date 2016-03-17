@@ -8,6 +8,11 @@
 
 @section('content')
 
+    <p>Name: {{$line['name']}}</p>
+    @if($line['icon_url'])
+        <div><img src="{{$line['icon_url']}}"></div>
+    @endif
+
     @if(count($tasksGroupedDate) > 0)
         <table>
             <tr>
