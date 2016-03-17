@@ -8,6 +8,11 @@
 
 @section('content')
 
+    <p>Name: {{$line['name']}}</p>
+    @if($line['icon_url'])
+        <div><img src="{{$line['icon_url']}}"></div>
+    @endif
+
     @if(count($tasksGroupedDate) > 0)
         <table>
             <tr>
@@ -20,12 +25,12 @@
                     <td>{{$date}}</td>
                     <td>
                         @if(isset($tasks['did']))
-                            <p>{{$tasks['did']}}</p>
+                            <pre>{{$tasks['did']}}</pre>
                         @endif
                     </td>
                     <td>
                         @if(isset($tasks['do']))
-                            <p>{{$tasks['do']}}</p>
+                            <pre>{{$tasks['do']}}</pre>
                         @endif
                     </td>
                 </tr>
