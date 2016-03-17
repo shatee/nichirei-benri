@@ -20,13 +20,13 @@
             <th>{{$date}}</th>
             @foreach($lines as $line)
                 <td>
-                    @if($line['type'] == 'information')
+                    @if($line['type'] == 'information' && isset($tasksGroupedLine[$line['id']]))
                         <h4>情報</h4>
                         @if(isset($tasksGroupedLine[$line['id']]['information']))
                             <pre>{{$tasksGroupedLine[$line['id']]['information']}}</pre>
                         @endif
 
-                    @else
+                    @elseif($line['type'] == 'progress' && isset($tasksGroupedLine[$line['id']]))
                         <h4>やったこと</h4>
                         @if(isset($tasksGroupedLine[$line['id']]['did']))
                             <pre>{{$tasksGroupedLine[$line['id']]['did']}}</pre>
@@ -43,3 +43,4 @@
     </table>
 
 @endsection
+
