@@ -2,6 +2,7 @@
 $menu = [
   'nichirei' => '日例',
   'line' => 'ライン',
+  'tasks' => 'タスク',
 ];
 ?>
 <div class="menu">

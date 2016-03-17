@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Line;
 use App\Task;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,16 @@ class TaskController extends Controller {
 
     $status = $task->save() ? 200 : 400;
     return response()->json(['status' => $status], $status);
+  }
+
+  public function all() {
+    $lines = Line::all();
+    $tasksGrouped = Task::getGroupedDateAndLineId();
+
+    return view('task.all', [
+      'lines' => $lines,
+      'tasksGrouped' => $tasksGrouped,
+    ]);
   }
 
 }

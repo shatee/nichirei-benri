@@ -11,33 +11,31 @@
     <table>
     <tr>
         <td>&nbsp;</td>
-        @foreach($lines as $line) {
+        @foreach($lines as $line)
             <th>{{$line['name']}}</th>
         @endforeach
     </tr>
     @foreach($tasksGrouped as $date => $tasksGroupedLine)
         <tr>
             <th>{{$date}}</th>
-            @foreach($lines as $line) {
+            @foreach($lines as $line)
                 <td>
-                @if($line['type'] == 'information')
-                    <pre>
-                        @if(isset($tasksGroupedLine[$line]['information']))
-                            {{$tasksGroupedLine[$line]['information']}}
+                    @if($line['type'] == 'information')
+                        <h4>情報</h4>
+                        @if(isset($tasksGroupedLine[$line['id']]['information']))
+                            <pre>{{$tasksGroupedLine[$line['id']]['information']}}</pre>
                         @endif
-                    </pre>
-                @else
-                    <pre>
-                        @if(isset($tasksGroupedLine[$line]['did']))
-                            {{$tasksGroupedLine[$line]['did']}}
+
+                    @else
+                        <h4>やったこと</h4>
+                        @if(isset($tasksGroupedLine[$line['id']]['did']))
+                            <pre>{{$tasksGroupedLine[$line['id']]['did']}}</pre>
                         @endif
-                    </pre>
-                    <pre>
-                        @if(isset($tasksGroupedLine[$line]['do']))
-                            {{$tasksGroupedLine[$line]['do']}}
+                        <h4>やること</h4>
+                        @if(isset($tasksGroupedLine[$line['id']]['do']))
+                            <pre>{{$tasksGroupedLine[$line['id']]['do']}}</pre>
                         @endif
-                    </pre>
-                @endif
+                    @endif
                 </td>
             @endforeach
         </tr>

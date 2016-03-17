@@ -18,4 +18,13 @@ class Task extends Model
     }
     return $tasksGroupedDate;
   }
+
+  public static function getGroupedDateAndLineId() {
+    $tasks = Task::orderBy('date')->get(['date', 'line_id', 'type', 'content']);
+    $tasksGrouped = [];
+    foreach ($tasks as $task) {
+      $tasksGrouped[$task->date][$task->line_id][$task->type] = $task->content;
+    }
+    return $tasksGrouped;
+  }
 }

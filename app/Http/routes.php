@@ -22,7 +22,7 @@ Route::post('/line/add', 'LineController@add');
 Route::get('/line/{id}/tasks', 'LineController@tasks');
 
 Route::post('/task/set', 'TaskController@store');
-
+Route::get('/tasks', 'TaskController@all');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
