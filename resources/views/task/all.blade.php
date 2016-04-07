@@ -2,10 +2,6 @@
 
 @section('pageName', 'タスクの一覧')
 
-@section('headBottom)
-    <script type="application/javascript" src="js/lib/fixed_midashi.js"></script>
-@endsection
-
 @section('menu')
     @include('common.parts.menu', ['current' => 'task'])
 @endsection
@@ -46,5 +42,16 @@
     @endforeach
     </table>
 
+@endsection
+
+@section('bodyBottom')
+    <!-- 見出し固定 -->
+    <style type="text/css" media="screen">
+      div.content { overflow: auto; }
+    </style>    
+    <script type="application/javascript" src="js/lib/fixed_midashi.js"></script>
+    <script type="application/javascript">
+        FixedMidashi.create();
+    </script>
 @endsection
 
