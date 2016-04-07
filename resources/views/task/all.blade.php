@@ -2,13 +2,17 @@
 
 @section('pageName', 'タスクの一覧')
 
+@section('headBottom)
+    <script type="application/javascript" src="js/lib/fixed_midashi.js"></script>
+@endsection
+
 @section('menu')
     @include('common.parts.menu', ['current' => 'task'])
 @endsection
 
 @section('content')
 
-    <table>
+    <table _fixedhead="rows:1; cols:2;">
     <tr>
         <td>&nbsp;</td>
         @foreach($lines as $line)
