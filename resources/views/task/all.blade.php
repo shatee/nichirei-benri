@@ -8,7 +8,7 @@
 
 @section('content')
 
-    <table _fixedhead="rows:1; cols:2;">
+    <table _fixedhead="rows:1; cols:1;">
     <tr>
         <td>&nbsp;</td>
         @foreach($lines as $line)
