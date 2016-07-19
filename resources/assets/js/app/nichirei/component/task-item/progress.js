@@ -29,8 +29,20 @@ export default class Progress extends React.Component {
 
   constructor() {
     super();
-    this._boundOnDoContentChange = _.debounce(this._onDoContentChange.bind(this), 1000);
-    this._boundOnDidContentChange = _.debounce(this._onDidContentChange.bind(this), 1000);
+
+    const onDoContentChange = this._onDoContentChange.bind(this);
+    const debouncedOnDoContentChange = _.debounce(onDoContentChange, 1000);
+    this._boundOnDoContentChange = (e) => {
+      e.persist();
+      debouncedOnDoContentChange(e);
+    };
+
+    const onDidContentChange = this._onDidContentChange.bind(this);
+    const debouncedOnDidContentChange = _.debounce(onDidContentChange, 1000);
+    this._boundOnDidContentChange = (e) => {
+      e.persist();
+      debouncedOnDidContentChange(e);
+    };
   }
 
   render() {

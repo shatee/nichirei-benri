@@ -22,7 +22,12 @@ export default class Information extends React.Component {
 
   constructor() {
     super();
-    this._boundOnContentChange = _.debounce(this._onContentChange.bind(this), 1000);
+    const onContentChange = this._onContentChange.bind(this);
+    const debouncedOnContentChange = _.debounce(onContentChange, 1000);
+    this._boundOnContentChange = (e) => {
+      e.persist();
+      debouncedOnContentChange(e);
+    };
   }
 
   render() {
