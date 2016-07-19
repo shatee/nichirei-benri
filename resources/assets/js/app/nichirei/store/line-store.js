@@ -14,8 +14,8 @@ class LineStore extends ReduceStore {
       type: data.type,
       createdAt: new Date(data['created_at']),
       updatedAt: new Date(data['updated_at']),
-      listOrder: data['list_order'],
-      visible: data.visible
+      listOrder: parseInt(data['list_order'], 10),
+      visible: data.visible === '1'
     }));
   }
 

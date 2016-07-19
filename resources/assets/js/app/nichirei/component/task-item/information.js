@@ -33,9 +33,12 @@ export default class Information extends React.Component {
     
     return <li className="TaskItem">
       <label className="TaskItem-label" htmlFor={taskId}>情報</label>
-      <textarea id={taskId} className="TaskItem-content-information" onChange={this._boundOnContentChange}>
-        {taskContent}
-      </textarea>
+      <textarea
+        id={taskId}
+        className="TaskItem-content-information"
+        onChange={this._boundOnContentChange}
+        defaultValue={taskContent}
+      />
     </li>;
   }
 

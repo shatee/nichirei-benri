@@ -10,7 +10,7 @@ export default class LineList extends React.Component {
   
   render() {
     const items = this.props.lines.map(line => {
-      return <LineItem line={line}/>;
+      return <LineItem line={line} key={line.id}/>;
     });
 
     return <ul className="LineList">

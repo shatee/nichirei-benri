@@ -46,13 +46,19 @@ export default class Progress extends React.Component {
 
     return <div className="TaskItem">
       <label className="TaskItem-label" htmlFor={taskDidId}>やったこと</label>
-      <textarea id={taskDidId} className="TaskItem-content-did" onChange={this._boundOnDidContentChange}>
-        {taskDidContent}
-      </textarea>
+      <textarea
+        id={taskDidId}
+        className="TaskItem-content-did"
+        onChange={this._boundOnDidContentChange}
+        defaultValue={taskDidContent}
+      />
       <label className="TaskItem-label" htmlFor={taskDoId}>やること</label>
-      <textarea id={taskDoId} className="TaskItem-content-do" onChange={this._boundOnDoContentChange}>
-        {taskDoContent}
-      </textarea>
+      <textarea
+        id={taskDoId}
+        className="TaskItem-content-do"
+        onChange={this._boundOnDoContentChange}
+        defaultValue={taskDoContent}
+      />
     </div>;
   }
 

@@ -54,12 +54,14 @@ export default class TaskRow extends React.Component {
           taskDo={taskDo}
           taskDid={taskDid}
           date={date}
+          key={taskDo.id}
         />;
       case Line.TYPE.INFORMATION:
         return <Information
           line={this.props.line}
           task={taskInformation}
           date={date}
+          key={taskInformation.id}
         />;
       default:
         return null;
