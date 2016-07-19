@@ -1,11 +1,16 @@
 import React from 'react';
+import Line from '../model/line';
 
 export default class LineItem extends React.Component {
 
+  static propTypes = {
+    line: React.PropTypes.instanceOf(Line)
+  };
+  
   render() {
     const line = this.props.line;
 
-    const icon = line.icon_url ? <img className="LineItem-icon" src={line.icon_url} /> : '';
+    const icon = line.iconUrl ? <img className="LineItem-icon" src={line.iconUrl} /> : '';
     const taskListUrl = `/line/${line.id}/tasks`;
 
     return <li className="LineItem">

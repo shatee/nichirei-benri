@@ -1,8 +1,15 @@
 import React from 'react';
 
 export default class TasksHeading extends React.Component {
+
+  static propTypes = {
+    dates: React.PropTypes.arrayOf(React.PropTypes.string),
+    today: React.PropTypes.string,
+    yesterday: React.PropTypes.string
+  };
+
   render() {
-    const headDates = this.props.dates.map(date => {
+    const headDates = this.props.dates.map((date) => {
       let id = '';
       let textAddition = '';
       switch (date) {
@@ -16,7 +23,7 @@ export default class TasksHeading extends React.Component {
           break;
       }
 
-      return <li id={id} className="TasksHeading-date" key={date}>{date}{textAddition}</li>;
+      return <li id={id} className="TasksHeading-date">{date}{textAddition}</li>;
     });
 
     return <ul className="TasksHeading">{headDates}</ul>;

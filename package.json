@@ -9,16 +9,16 @@
     "babel-preset-react": "^6.5.0",
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
-    "flux": "^2.1.1",
-    "gulp": "^3.8.8",
-    "qs": "^6.1.0",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
-    "underscore": "^1.8.3"
+    "gulp": "^3.8.8"
   },
   "dependencies": {
+    "bootstrap-sass": "^3.0.0",
+    "flux": "^2.1.1",
     "laravel-elixir": "^4.0.0",
-    "bootstrap-sass": "^3.0.0"
+    "lodash": "^4.13.1",
+    "qs": "^6.1.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
   },
   "name": "nichirei-benri",
   "description": "日例を便利にする web アプリケーションです。",
@@ -28,6 +28,7 @@
     "test": "tests"
   },
   "scripts": {
+    "build": "npm run build:nichirei",
     "build:nichirei": "browserify resources/assets/js/app/nichirei/app.js --debug -t babelify -o public/js/nichirei.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
