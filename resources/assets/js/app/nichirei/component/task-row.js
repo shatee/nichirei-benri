@@ -46,7 +46,9 @@ export default class TaskRow extends React.Component {
           taskInformation = task;
       }
     }
-    
+
+    const key = `${this.props.line.id}:${date}`;
+
     switch (this.props.line.type) {
       case Line.TYPE.PROGRESS:
         return <Progress
@@ -54,14 +56,14 @@ export default class TaskRow extends React.Component {
           taskDo={taskDo}
           taskDid={taskDid}
           date={date}
-          key={taskDo.id}
+          key={key}
         />;
       case Line.TYPE.INFORMATION:
         return <Information
           line={this.props.line}
           task={taskInformation}
           date={date}
-          key={taskInformation.id}
+          key={key}
         />;
       default:
         return null;

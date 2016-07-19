@@ -9,7 +9,7 @@ class TaskStore extends ReduceStore {
     const dataContainer = document.querySelector('.data-container');
     return JSON.parse(dataContainer.dataset.tasks).map((data) => new Task({
       id: data.id,
-      lineId: data.lineId,
+      lineId: parseInt(data['line_id'], 10),
       createdAt: new Date(data['created_at']),
       updatedAt: new Date(data['updated_at']),
       date: data.date,

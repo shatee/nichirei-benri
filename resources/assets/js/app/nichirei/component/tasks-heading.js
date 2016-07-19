@@ -23,7 +23,7 @@ export default class TasksHeading extends React.Component {
           break;
       }
 
-      return <li id={id} className="TasksHeading-date" key={id}>{date}{textAddition}</li>;
+      return <li id={id} className="TasksHeading-date" key={date}>{date}{textAddition}</li>;
     });
 
     return <ul className="TasksHeading">{headDates}</ul>;
