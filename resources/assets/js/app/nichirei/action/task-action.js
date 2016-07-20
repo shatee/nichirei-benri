@@ -1,4 +1,3 @@
-import Dispatcher from '../dispatcher';
 import Task from '../model/task';
 
 export default class TaskAction {
@@ -7,6 +6,9 @@ export default class TaskAction {
     INPUT: Symbol('input')
   };
 
+  /**
+   * @param {Task} task
+   */
   static save(task) {
     task.save().catch((res) => {
       console.log(res);
