@@ -11,7 +11,7 @@ class Task extends Model
   protected $fillable = ['line_id', 'date', 'type', 'content'];
 
   public static function getGroupedDateByLineId($lineId) {
-    $tasks = Task::where('line_id', $lineId)->orderBy('date')->get();
+    $tasks = Task::where('line_id', $lineId)->orderBy('date desc')->get();
     $tasksGroupedDate = [];
     foreach ($tasks as $task) {
       $tasksGroupedDate[$task->date][$task->type] = $task->content;
