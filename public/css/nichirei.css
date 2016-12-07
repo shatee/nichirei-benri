@@ -153,13 +153,16 @@ label.Content-label {
 .Content-markdown h2,
 .Content-markdown h3,
 .Content-markdown h4 {
-  margin: 0;
+  margin-top: 4px;
   padding: 2px 0;
   border: none;
   font-weight: bold;
   color: #333;
 }
 
+.Content-markdown *:first-child {
+  margin-top: 0;
+}
 
 .Content-markdown h1 {
   line-height: 22px;
