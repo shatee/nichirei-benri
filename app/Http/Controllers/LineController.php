@@ -45,6 +45,7 @@ class LineController extends Controller {
   public function tasks($id) {
     $line = Line::find($id);
     $tasksGroupedDate = Task::getGroupedDateByLineId($id);
+    krsort($tasksGroupedDate);
 
     return view('line.tasks', [
       'line' => $line,
