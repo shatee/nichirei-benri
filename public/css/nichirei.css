@@ -199,3 +199,11 @@ label.Content-label {
 .Content-markdown li li ul li {
   list-style-type: square;
 }
+
+.Content-markdown blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 8px;
+}
+.Content-markdown blockquote span {
+  color: #666;
+}
