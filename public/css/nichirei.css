@@ -112,11 +112,11 @@ label.Content-label {
 }
 
 .TaskItem-progress .Content {
-  height: 200px;
+  height: 196px;
 }
 
 .TaskItem-information .Content {
-  height: 400px;
+  height: 392px;
 }
 
 .Content-editingTextarea {
