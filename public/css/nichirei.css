@@ -97,32 +97,102 @@ img.LineItem-icon {
 .TaskItem {
   width: 440px;
   height: 400px;
-  padding-left: 5px;
+  padding: 4px;
   float: left;
   background-color: #fff;
   border-top: #ddd solid 1px;
   border-right: #ddd solid 1px;
 }
 
-label.TaskItem-label {
+label.Content-label {
   color: #666;
   font-size: 14px;
   font-weight: bold;
   display: block;
 }
 
-textarea.TaskItem-content-do,
-textarea.TaskItem-content-did,
-textarea.TaskItem-content-information {
-  font-size: 16px;
+.TaskItem-progress .Content {
+  height: 200px;
 }
 
-textarea.TaskItem-content-do,
-textarea.TaskItem-content-did {
+.TaskItem-information .Content {
+  height: 400px;
+}
+
+.Content-editingTextarea {
+  background: #ffe;
+  font-size: 14px;
+}
+
+.TaskItem-progress .Content-editingTextarea {
   width: 428px;
   height: 172px;
 }
-textarea.TaskItem-content-information {
+
+.TaskItem-information .Content-editingTextarea {
   width: 428px;
   height: 368px;
+}
+
+.Content-markdown {
+  padding: 2px;
+  border: 1px solid #ddd;
+  word-break: break-all;
+  overflow-y: auto;
+}
+
+.TaskItem-progress .Content-markdown{
+  height: 172px;
+}
+
+.TaskItem-information .Content-markdown{
+  height: 368px;
+}
+
+.Content-markdown h1,
+.Content-markdown h2,
+.Content-markdown h3,
+.Content-markdown h4 {
+  margin: 0;
+  padding: 2px 0;
+  border: none;
+  font-weight: bold;
+  color: #333;
+}
+
+
+.Content-markdown h1 {
+  line-height: 22px;
+  font-size: 18px;
+}
+
+.Content-markdown h2 {
+  line-height: 20px;
+  font-size: 16px;
+}
+
+.Content-markdown h3 {
+  line-height: 18px;
+  font-size: 15px;
+}
+
+.Content-markdown h4 {
+  line-height: 16px;
+  font-size: 14px;
+}
+
+.Content-markdown ul {
+  padding: 0 0 2px 20px;
+}
+
+.Content-markdown ul li {
+  list-style-type: disc;
+}
+
+.Content-markdown li ul li {
+  list-style-type: circle;
+}
+
+.Content-markdown li li ul li {
+  list-style-type: square;
 }

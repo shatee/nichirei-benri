@@ -6,6 +6,11 @@
 
   <!-- position: sticky polifyll -->
   <link rel="stylesheet" href="/css/lib/fixedsticky.css">
+  <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"
+  ></script>
   <script type="application/javascript" src="/js/lib/fixedsticky.js"></script>
 
   <link rel="stylesheet" href="/css/base.css">

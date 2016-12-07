@@ -4,6 +4,7 @@ import React from 'react';
 import TaskAction from '../../action/task-action';
 import Line from '../../model/line';
 import Task from '../../model/task';
+import Content from './content';
 import _ from 'lodash';
 
 export default class Information extends React.Component {
@@ -14,20 +15,9 @@ export default class Information extends React.Component {
     date: React.PropTypes.string
   };
 
-  /**
-   * @type {Function|null}
-   * @private
-   */
-  _boundOnContentChange = null;
-
   constructor() {
     super();
-    const onContentChange = this._onContentChange.bind(this);
-    const debouncedOnContentChange = _.debounce(onContentChange, 1000);
-    this._boundOnContentChange = (e) => {
-      e.persist();
-      debouncedOnContentChange(e);
-    };
+    this._boundOnContentFix = this._onContentFix.bind(this);
   }
 
   render() {
@@ -36,23 +26,22 @@ export default class Information extends React.Component {
     const taskId = `TaskItem-task-${this.props.line.id}-${this.props.date}`;
     const taskContent = task ? task.content : '';
     
-    return <li className="TaskItem">
-      <label className="TaskItem-label" htmlFor={taskId}>情報</label>
-      <textarea
+    return <li className="TaskItem TaskItem-information">
+      <Content
         id={taskId}
-        className="TaskItem-content-information"
-        onChange={this._boundOnContentChange}
-        defaultValue={taskContent}
+        labelText="情報"
+        content={taskContent}
+        onFix={this._boundOnContentFix}
       />
     </li>;
   }
 
-  _onContentChange(e) {
+  _onContentFix(content) {
     const task = new Task({
       lineId: this.props.line.id,
       date: this.props.date,
       type: Task.TYPE.INFORMATION,
-      content: e.target.value
+      content
     });
     TaskAction.save(task);
   }
