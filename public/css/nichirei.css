@@ -200,6 +200,10 @@ label.Content-label {
   list-style-type: square;
 }
 
+.Content-markdown p {
+  padding-bottom: 4px;
+}
+
 .Content-markdown blockquote {
   border-left: 4px solid #ccc;
   padding-left: 8px;
