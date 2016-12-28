@@ -2,7 +2,7 @@
 
 @section('pageName', 'タスクの一覧')
 
-@section('headBottom)
+@section('headBottom')
     <script type="application/javascript" src="js/lib/fixed_midashi.js"></script>
 @endsection
 
