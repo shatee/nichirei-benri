@@ -32,12 +32,12 @@ export default class App extends React.Component {
   render() {
     return <div className="NichireiContainer">
       <div className="NichireiContainer-body">
-        <LineList lines={this.state.lines} />
         <TasksHeading
           dates={this.props.dates}
           today={this.props.today}
           yesterday={this.props.yesterday}
         />
+        <LineList lines={this.state.lines} />
         <TaskList
           lines={this.state.lines}
           tasks={this.state.tasks}
