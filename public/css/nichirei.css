@@ -12,6 +12,7 @@ div.content {
 }
 
 .NichireiContainer-body {
+  position: relative;
   width: 100%;
 }
 
@@ -82,16 +83,9 @@ img.LineItem-icon {
 
 /* Task list */
 .TaskList {
-  clear: both;
-  width: 5000px;
-}
-
-/*.TaskRow {*/
-  /*width: 5000px;*/
-/*}*/
-
-.TaskRow {
-  clear: both;
+  position: absolute;
+  top: 32px;
+  left: 120px;
 }
 
 .TaskItem {
