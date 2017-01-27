@@ -95,8 +95,8 @@ img.LineItem-icon {
   padding: 4px;
   float: left;
   background-color: #fff;
-  border-top: #ddd solid 1px;
   border-right: #ddd solid 1px;
+  border-bottom: #ddd solid 1px;
 }
 
 label.Content-label {
