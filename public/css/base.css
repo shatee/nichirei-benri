@@ -55,9 +55,14 @@ input, textarea {
 }
 
 .menu {
+  position: sticky;
+  top: 0;
   width: 100%;
-  padding: 2px 8px;
+  padding: 0 8px;
+  height: 26px;
+  line-height: 26px;
   background-color: #222;
+  z-index: 1;
 }
 .menu li {
   display: inline;

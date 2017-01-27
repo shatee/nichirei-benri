@@ -33,18 +33,16 @@ export default class App extends React.Component {
     return <div className="NichireiContainer">
       <div className="NichireiContainer-body">
         <LineList lines={this.state.lines} />
-        <div className="NichireiContainer-tasks">
-          <TasksHeading
-            dates={this.props.dates}
-            today={this.props.today}
-            yesterday={this.props.yesterday}
-          />
-          <TaskList
-            lines={this.state.lines}
-            tasks={this.state.tasks}
-            dates={this.props.dates}
-          />
-        </div>
+        <TasksHeading
+          dates={this.props.dates}
+          today={this.props.today}
+          yesterday={this.props.yesterday}
+        />
+        <TaskList
+          lines={this.state.lines}
+          tasks={this.state.tasks}
+          dates={this.props.dates}
+        />
       </div>
     </div>;
   }

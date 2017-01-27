@@ -1,3 +1,7 @@
+body {
+  width: 5000px;
+}
+
 div.content {
   margin: 0;
   padding: 0;
@@ -11,17 +15,11 @@ div.content {
   width: 100%;
 }
 
-.NichireiContainer-tasks {
-  margin-left: 120px;
-  width: calc(100% - 120px);
-  overflow-x: scroll;
-}
-
 ul.TasksHeading {
-  width: 5000px;
-}
-ul.TasksHeading:after {
-  clear: both;
+  position: sticky;
+  top: 25px;
+  margin-left: 120px;
+  z-index: 1;
 }
 
 li.TasksHeading-date {
@@ -55,10 +53,12 @@ span.icon-today {
 /* Line list */
 
 ul.LineList {
-  padding-top: 32px;
+  position: sticky;
+  left: 0;
+  margin-top: 32px;
   width: 120px;
-  float: left;
   border-right: #ccc solid 1px;
+  z-index: 1;
 }
 
 li.LineItem {

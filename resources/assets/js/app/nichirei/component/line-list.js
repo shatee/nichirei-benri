@@ -9,7 +9,7 @@ export default class LineList extends React.Component {
   };
   
   render() {
-    const items = this.props.lines.map(line => {
+    const items = this.props.lines.map((line) => {
       return <LineItem line={line} key={line.id}/>;
     });
 
