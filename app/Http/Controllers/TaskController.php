@@ -16,7 +16,7 @@ class TaskController extends Controller {
       'type' => $request->type,
     ]);
 
-    $task->content = $request->get('content');
+    $task->content = $this->formatContentForStore($request->get('content'));
 
     $status = $task->save() ? 200 : 400;
     return response()->json(['status' => $status], $status);
@@ -32,4 +32,8 @@ class TaskController extends Controller {
     ]);
   }
 
+  private function formatContentForStore($content) {
+    return strtr($content, ['&#34;' => '"']);
+  }
 }
+
