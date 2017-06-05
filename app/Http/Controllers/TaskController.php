@@ -24,7 +24,7 @@ class TaskController extends Controller {
 
   public function all() {
     $lines = Line::all();
-    $tasksGrouped = Task::getGroupedDateAndLineId();
+    $tasksGrouped = array_reverse(Task::getGroupedDateAndLineId());
 
     return view('task.all', [
       'lines' => $lines,
