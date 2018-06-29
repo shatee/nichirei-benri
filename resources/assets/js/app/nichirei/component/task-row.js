@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Progress from './task-item/progress';
 import Information from './task-item/information';
 import Line from '../model/line';
@@ -7,9 +8,9 @@ import Task from '../model/task';
 export default class TaskRow extends React.Component {
 
   static propTypes = {
-    dates: React.PropTypes.arrayOf(React.PropTypes.string),
-    line: React.PropTypes.instanceOf(Line),
-    tasks: React.PropTypes.arrayOf(Task)
+    dates: PropTypes.arrayOf(PropTypes.string),
+    line: PropTypes.instanceOf(Line),
+    tasks: PropTypes.arrayOf(Task)
   };
 
   render() {

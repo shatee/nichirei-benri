@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LineItem from './line-item';
 import Line from '../model/line';
 
 export default class LineList extends React.Component {
 
   static propTypes = {
-    lines: React.PropTypes.arrayOf(Line)
+    lines: PropTypes.arrayOf(Line)
   };
   
   render() {

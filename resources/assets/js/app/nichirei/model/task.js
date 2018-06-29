@@ -20,8 +20,10 @@ export default class Task {
   type = null;
   /** @type {string|null} */
   content = null;
+  /** @type {number} */
+  revision = 0;
   
-  constructor({id, lineId, createdAt, updatedAt, date, type, content}) {
+  constructor({id, lineId, createdAt, updatedAt, date, type, content, revision}) {
     this.id = id;
     this.lineId = lineId;
     this.createdAt = createdAt;
@@ -29,6 +31,7 @@ export default class Task {
     this.date = date;
     this.type = type;
     this.content = content;
+    this.revision = revision;
   }
 
   /**
@@ -44,10 +47,12 @@ export default class Task {
    */
   static save(task) {
     return Task._post('/task/set', {
+      id: task.id,
       line_id: task.lineId,
       date: task.date,
       type: task.type,
-      content: task.content
+      content: task.content,
+      current_revision: task.revision
     });
   }
 
@@ -63,17 +68,16 @@ export default class Task {
       formData.append(key, data[key]);
     }
 
-    return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest();
-      xhr.open('POST', url);
-      xhr.onreadystatechange = () => {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-          resolve(xhr.responseText);
-        } else {
-          reject(xhr.responseText);
-        }
-      };
-      xhr.send(formData);
+    return fetch(url, {
+      method: 'post',
+      body: formData
+    }).then((response) => {
+      return response.json();
+    }).then((json) => {
+      if (json.status !== 200) {
+        return Promise.reject(json);
+      }
+      return json;
     });
   }
 }

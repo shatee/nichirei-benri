@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import TaskAction from '../../action/task-action';
 import Line from '../../model/line';
 import Task from '../../model/task';
@@ -10,9 +11,9 @@ import _ from 'lodash';
 export default class Information extends React.Component {
 
   static propTypes = {
-    line: React.PropTypes.instanceOf(Line),
-    task: React.PropTypes.instanceOf(Task),
-    date: React.PropTypes.string
+    line: PropTypes.instanceOf(Line),
+    task: PropTypes.instanceOf(Task),
+    date: PropTypes.string
   };
 
   constructor() {
@@ -37,12 +38,8 @@ export default class Information extends React.Component {
   }
 
   _onContentFix(content) {
-    const task = new Task({
-      lineId: this.props.line.id,
-      date: this.props.date,
-      type: Task.TYPE.INFORMATION,
-      content
-    });
+    const task = this.props.task;
+    task.content = content;
     TaskAction.save(task);
   }
 

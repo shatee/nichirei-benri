@@ -1,31 +1,36 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import {Container} from '../../../../../node_modules/flux/utils';
 import LineList from './component/line-list';
 import TasksHeading from './component/tasks-heading'
 import TaskList from './component/task-list';
-import LineStore from './store/line-store';
-import TaskStore from './store/task-store';
+import lineStore from './store/line-store';
+import taskStore from './store/task-store';
+import noticeStore from './store/notice-store';
+import Notice from "./component/notice";
 
-export default class App extends React.Component {
+class App extends React.Component {
 
   static propTypes = {
-    dates: React.PropTypes.arrayOf(React.PropTypes.string),
-    today: React.PropTypes.string,
-    yesterday: React.PropTypes.string
+    dates: PropTypes.arrayOf(PropTypes.string),
+    today: PropTypes.string,
+    yesterday: PropTypes.string
   };
 
   static getStores() {
     return [
-      LineStore,
-      TaskStore
+      lineStore,
+      taskStore,
+      noticeStore
     ];
   }
 
   static calculateState(prevState) {
     return {
-      lines: LineStore.getState(),
-      tasks: TaskStore.getState()
+      lines: lineStore.getState(),
+      tasks: taskStore.getState(),
+      notice: noticeStore.getState()
     };
   }
 
@@ -44,6 +49,11 @@ export default class App extends React.Component {
           dates={this.props.dates}
         />
       </div>
+      <Notice
+        isVisible={this.state.notice.isVisible}
+        message={this.state.notice.message}
+        isError={this.state.notice.isError}
+      />
     </div>;
   }
 }

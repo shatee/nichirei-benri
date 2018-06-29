@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class TasksHeading extends React.Component {
 
   static propTypes = {
-    dates: React.PropTypes.arrayOf(React.PropTypes.string),
-    today: React.PropTypes.string,
-    yesterday: React.PropTypes.string
+    dates: PropTypes.arrayOf(PropTypes.string),
+    today: PropTypes.string,
+    yesterday: PropTypes.string
   };
 
   render() {

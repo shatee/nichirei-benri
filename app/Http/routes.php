@@ -20,9 +20,12 @@ Route::get('/nichirei', 'NichireiController@index');
 Route::get('/line', 'LineController@index');
 Route::post('/line/add', 'LineController@add');
 Route::get('/line/{id}/tasks', 'LineController@tasks');
+Route::get('/line/{id}/task', 'LineController@task');
 
 Route::post('/task/set', 'TaskController@store');
 Route::get('/tasks', 'TaskController@all');
+Route::get('/task/{id}', 'TaskController@get');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

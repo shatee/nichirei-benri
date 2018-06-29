@@ -20,8 +20,10 @@ class LineStore extends ReduceStore {
   }
 
   reduce(state, action) {
+    return state;
   }
 
 }
 
-export default new LineStore(Dispatcher);
+const lineStore = new LineStore(Dispatcher);
+export default lineStore;

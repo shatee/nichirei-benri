@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import TaskAction from '../../action/task-action';
 import Line from '../../model/line';
 import Task from '../../model/task';
@@ -10,10 +11,10 @@ import _ from 'lodash';
 export default class Progress extends React.Component {
 
   static propTypes = {
-    line: React.PropTypes.instanceOf(Line),
-    taskDo: React.PropTypes.instanceOf(Task),
-    taskDid: React.PropTypes.instanceOf(Task),
-    date: React.PropTypes.string
+    line: PropTypes.instanceOf(Line),
+    taskDo: PropTypes.instanceOf(Task),
+    taskDid: PropTypes.instanceOf(Task),
+    date: PropTypes.string
   };
 
   constructor() {
@@ -50,22 +51,14 @@ export default class Progress extends React.Component {
   }
 
   _onDidContentFix(content) {
-    const task = new Task({
-      lineId: this.props.line.id,
-      date: this.props.date,
-      type: Task.TYPE.DID,
-      content
-    });
+    const task = this.props.taskDid;
+    task.content = content;
     TaskAction.save(task);
   }
 
   _onDoContentFix(content) {
-    const task = new Task({
-      lineId: this.props.line.id,
-      date: this.props.date,
-      type: Task.TYPE.DO,
-      content
-    });
+    const task = this.props.taskDo;
+    task.content = content;
     TaskAction.save(task);
   }
 

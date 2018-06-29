@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TaskRow from './task-row';
 import Line from '../model/line';
 import Task from '../model/task';
@@ -6,11 +7,11 @@ import Task from '../model/task';
 export default class TaskList extends React.Component {
 
   static propTypes = {
-    lines: React.PropTypes.arrayOf(Line),
-    tasks: React.PropTypes.arrayOf(Task),
-    dates: React.PropTypes.arrayOf(React.PropTypes.string),
-    today: React.PropTypes.string,
-    yesterday: React.PropTypes.string
+    lines: PropTypes.arrayOf(Line),
+    tasks: PropTypes.arrayOf(Task),
+    dates: PropTypes.arrayOf(PropTypes.string),
+    today: PropTypes.string,
+    yesterday: PropTypes.string
   };
 
   render() {

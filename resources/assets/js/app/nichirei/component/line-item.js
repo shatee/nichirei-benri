@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Line from '../model/line';
 
 export default class LineItem extends React.Component {
 
   static propTypes = {
-    line: React.PropTypes.instanceOf(Line)
+    line: PropTypes.instanceOf(Line)
   };
   
   render() {

@@ -31,10 +31,8 @@ li.TasksHeading-date {
   float: left;
   font-size: 20px;
   font-weight: bold;
-  background-color: #fff;
-  border-top: #ddd solid 1px;
-  border-right: #ddd solid 1px;
-  border-bottom: #ddd solid 1px;
+  background-color: #ddd;
+  border-right: #bbb solid 2px;
 }
 
 span.icon-yesterday,
@@ -59,14 +57,13 @@ ul.LineList {
   left: 0;
   padding-top: 32px;
   width: 120px;
-  border-right: #ccc solid 1px;
+  background: #f8f8f8;
   z-index: 1;
 }
 
 li.LineItem {
   height: 400px;
-  background-color: #fff;
-  border-bottom: #ddd solid 1px;
+  border-bottom: #ccc solid 2px;
   padding: 8px;
 }
 
@@ -94,9 +91,9 @@ img.LineItem-icon {
   height: 400px;
   padding: 4px;
   float: left;
-  background-color: #fff;
-  border-right: #ddd solid 1px;
-  border-bottom: #ddd solid 1px;
+  background-color: #eee;
+  border-right: #ccc solid 2px;
+  border-bottom: #ccc solid 2px;
 }
 
 label.Content-label {
@@ -131,7 +128,8 @@ label.Content-label {
 
 .Content-markdown {
   padding: 2px;
-  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 4px;
   word-break: break-all;
   overflow-y: auto;
 }
@@ -205,4 +203,20 @@ label.Content-label {
 }
 .Content-markdown blockquote span {
   color: #666;
+}
+
+.Notice {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 8px;
+  background: #eee;
+  color: #888;
+}
+
+.Notice.is-error {
+  background: #ebb;
+  color: #833;
 }

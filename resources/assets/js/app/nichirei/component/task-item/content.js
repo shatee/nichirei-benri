@@ -1,17 +1,16 @@
-'use strict';
-
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import ClickOutComponent from 'react-onclickout';
 
 export default class Content extends ClickOutComponent {
 
   static propTypes = {
-    id: React.PropTypes.string.isRequired,
-    labelText: React.PropTypes.string.isRequired,
-    content: React.PropTypes.string.isRequired,
-    onFocus: React.PropTypes.func,
-    onFix: React.PropTypes.func
+    id: PropTypes.string.isRequired,
+    labelText: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+    onFocus: PropTypes.func,
+    onFix: PropTypes.func
   };
 
   static defaultProps = {

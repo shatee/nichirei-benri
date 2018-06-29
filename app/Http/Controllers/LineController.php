@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Line;
 use App\Task;
+use http\Env\Response;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -51,6 +52,17 @@ class LineController extends Controller {
       'line' => $line,
       'tasksGroupedDate' => $tasksGroupedDate,
     ]);
+  }
+
+  public function task($id, Request $request) {
+    if (!$request->date || !$request->task_type) {
+      return response(['status' => 400, 'message' => 'invalid parameter'], 400);
+    }
+    $task = Task::where('line_id', $id)->where('date', $request->date)->where('type', $request->task_type)->first();
+    if (!$task) {
+      return response(['status' => 404], 404);
+    }
+    return response(['status' => 200, 'task' => $task]);
   }
 
 }
