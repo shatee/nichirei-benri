@@ -51,13 +51,21 @@ export default class Progress extends React.Component {
   }
 
   _onDidContentFix(content) {
-    const task = this.props.taskDid;
+    const task = this.props.taskDid || new Task({
+      lineId: this.props.line.id,
+      date: this.props.date,
+      type: Task.TYPE.DID
+    });
     task.content = content;
     TaskAction.save(task);
   }
 
   _onDoContentFix(content) {
-    const task = this.props.taskDo;
+    const task = this.props.taskDo || new Task({
+      lineId: this.props.line.id,
+      date: this.props.date,
+      type: Task.TYPE.DO
+    });
     task.content = content;
     TaskAction.save(task);
   }
