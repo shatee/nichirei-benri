@@ -6,6 +6,7 @@ export default class TaskAction {
   static TYPE = {
     INPUT: Symbol('input'),
     CONFLICT: Symbol('conflict'),
+    SAVE: Symbol('save'),
     ERROR: Symbol('error')
   };
 
@@ -13,8 +14,12 @@ export default class TaskAction {
    * @param {Task} task
    */
   static save(task) {
-    task.save().then((res) => {
-      console.log('SUCCESS', res);
+    task.save().then(() => {
+      console.log('SUCCESS', task);
+      dispatch({
+        type: this.TYPE.SAVE,
+        task
+      });
     }).catch((res) => {
       if (res.status && res.status === 409) {
         dispatch({

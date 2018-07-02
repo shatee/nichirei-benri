@@ -36,7 +36,7 @@ class TaskController extends Controller {
     $task->revision ++;
 
     $status = $task->save() ? 200 : 400;
-    return response()->json(['status' => $status], $status);
+    return response()->json(['status' => $status, 'task' => $task], $status);
   }
 
   public function all() {

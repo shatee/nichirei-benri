@@ -15,6 +15,12 @@ class NoticeStore extends ReduceStore {
 
   reduce(state, action) {
     switch (action.type) {
+      case TaskAction.TYPE.SAVE:
+        return Object.assign({}, state, {
+          isVisible: true,
+          message: '保存しました',
+          isError: false
+        });
       case TaskAction.TYPE.ERROR:
         return Object.assign({}, state, {
           isVisible: true,

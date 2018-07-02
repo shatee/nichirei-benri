@@ -47,12 +47,15 @@ export default class Task {
    */
   static save(task) {
     return Task._post('/task/set', {
-      id: task.id,
+      id: task.id || 0,
       line_id: task.lineId,
       date: task.date,
       type: task.type,
       content: task.content,
-      current_revision: task.revision
+      current_revision: task.revision || 0
+    }).then((response) => {
+      task.id = response.task.id;
+      task.revision = response.task.revision;
     });
   }
 

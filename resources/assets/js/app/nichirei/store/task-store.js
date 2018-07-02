@@ -25,10 +25,10 @@ class TaskStore extends ReduceStore {
    * @return {Task[]}
    */
   reduce(state, action) {
-    // switch(action.type) {
-    //   case TaskAction.TYPE.INPUT:
-    //     state.set();
-    // }
+    switch(action.type) {
+      case TaskAction.TYPE.SAVE:
+        return [action.task].concat(state.filter((task_) => action.task.id !== task_.id));
+    }
     return state;
   }
 
