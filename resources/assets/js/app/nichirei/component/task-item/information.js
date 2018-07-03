@@ -38,7 +38,11 @@ export default class Information extends React.Component {
   }
 
   _onContentFix(content) {
-    const task = this.props.task;
+    const task = this.props.task || new Task({
+      lineId: this.props.line.id,
+      date: this.props.date,
+      type: Task.TYPE.INFORMATION
+    });
     task.content = content;
     TaskAction.save(task);
   }
