@@ -10,9 +10,6 @@ use App\Http\Requests;
 
 class NichireiController extends Controller {
 
-  const START_DAY = -7;
-  const END_DAY = 7;
-
   public function index() {
     /** @var Collection $lines */
     $lines = Line::where('visible', true)
@@ -23,8 +20,8 @@ class NichireiController extends Controller {
       return $line['id'];
     }, $lines->all());
 
-    $dateStart = new \DateTime('-4 day');
-    $dateEnd = new \DateTime('+4 day');
+    $dateStart = new \DateTime('-7 day');
+    $dateEnd = new \DateTime('+7 day');
     $tasks = Task::whereIn('line_id', $lineIds)
       ->whereBetween('date', [$dateStart->format('Y-m-d'), $dateEnd->format('Y-m-d')])
       ->get();
