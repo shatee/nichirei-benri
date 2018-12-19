@@ -10,8 +10,8 @@ use App\Http\Requests;
 
 class NichireiController extends Controller {
 
-  const START_DAY = -4;
-  const END_DAY = 4;
+  const START_DAY = -7;
+  const END_DAY = 7;
 
   public function index() {
     /** @var Collection $lines */
