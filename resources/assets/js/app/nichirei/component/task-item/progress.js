@@ -51,6 +51,11 @@ export default class Progress extends React.Component {
   }
 
   _onDidContentFix(content) {
+    // 変更がなかったら保存しない
+    if (this.props.taskDid ? this.props.taskDid.content === content : !content.length) {
+      return;
+    }
+
     const task = this.props.taskDid || new Task({
       lineId: this.props.line.id,
       date: this.props.date,
@@ -61,6 +66,11 @@ export default class Progress extends React.Component {
   }
 
   _onDoContentFix(content) {
+    // 変更がなかったら保存しない
+    if (this.props.taskDo ? this.props.taskDo.content === content : !content.length) {
+      return;
+    }
+
     const task = this.props.taskDo || new Task({
       lineId: this.props.line.id,
       date: this.props.date,

@@ -38,6 +38,11 @@ export default class Information extends React.Component {
   }
 
   _onContentFix(content) {
+    // 変更がなかったら保存しない
+    if (this.props.task ? this.props.task.content === content : !content.length) {
+      return;
+    }
+
     const task = this.props.task || new Task({
       lineId: this.props.line.id,
       date: this.props.date,
