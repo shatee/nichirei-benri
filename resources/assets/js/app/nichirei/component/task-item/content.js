@@ -86,8 +86,13 @@ export default class Content extends ClickOutComponent {
     this._onFix();
   }
 
-  _onFocus() {
+  _onFocus(e) {
     if (this.state.isEditing) {
+      return;
+    }
+
+    // クリックされたのがリンクだったら editing にしない
+    if (e.target && e.target.nodeName === 'A') {
       return;
     }
 
