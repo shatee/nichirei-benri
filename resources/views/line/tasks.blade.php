@@ -31,7 +31,7 @@
                     </tr>
                 @endforeach
             </table>
-        @elseif($line['type'] == 'progress' && isset($tasksGroupedLine[$line['id']]))
+        @elseif($line['type'] == 'progress')
             <table>
                 <tr>
                     <th>日付</th>
