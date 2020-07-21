@@ -21,5 +21,5 @@
 @endsection
 
 @section('bodyBottom')
-  <script type="application/javascript" src="js/nichirei.js"></script>
+  <script type="application/javascript" src="js/nichirei.min.js"></script>
 @endsection

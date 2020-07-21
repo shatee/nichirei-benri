@@ -9,13 +9,14 @@
     "babel-preset-react": "^6.24.1",
     "babelify": "^8.0.0",
     "browserify": "^16.2.2",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "uglify-js": "^3.10.0"
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
     "flux": "^3.1.3",
     "laravel-elixir": "^6.0.0-18",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.19",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
     "react": "^16.4.1",
@@ -31,8 +32,9 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "npm run build:nichirei",
-    "build:nichirei": "browserify resources/assets/js/app/nichirei/app.js --debug -t babelify -o public/js/nichirei.js",
+    "build": "npm run build:nichirei && npm run build:minify",
+    "build:nichirei": "browserify resources/assets/js/app/nichirei/app.js -t babelify -o public/js/nichirei.js",
+    "build:minify": "uglifyjs public/js/nichirei.js -c -o public/js/nichirei.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
